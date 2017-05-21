@@ -5,7 +5,7 @@ Flask-GeoIP
 
 Simple Flask extension for pygeoip.
 """
-from __future__ import print_function
+
 import codecs
 import os
 from pip.download import PipSession

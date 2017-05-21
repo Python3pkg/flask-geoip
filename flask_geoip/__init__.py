@@ -35,10 +35,10 @@ class GeoIP(object):
         cache_setting_name = app.config['GEOIP_CACHE']
         cache_setting = CACHE_MAP.get(app.config['GEOIP_CACHE'])
 
-        if cache_setting_name not in CACHE_MAP.keys():
+        if cache_setting_name not in list(CACHE_MAP.keys()):
             msg = ('{0} is not a valid GEOIP_CACHE setting! '
                    'The following are available: {1}')
-            format_args = (cache_setting_name, ', '.join(CACHE_MAP.keys()))
+            format_args = (cache_setting_name, ', '.join(list(CACHE_MAP.keys())))
             raise RuntimeError(msg.format(*format_args))
 
         if 'GEOIP_FILEPATH' not in app.config:
